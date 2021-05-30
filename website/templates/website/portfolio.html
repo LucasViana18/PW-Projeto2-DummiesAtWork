@@ -1,0 +1,106 @@
+{% extends 'website/base.html' %}
+
+{% block main %}
+    <section class="grid">
+        <div class="box-left">
+            <h1>
+                {% load static %}
+                Anything but Dark - 2D adventure platformer<br><img src="{% static 'website/images/cave.ico'%}" alt="Caverna">
+            </h1>
+            <p>
+                After an unfortunate accident, Will finds himself lost inside an unexplored cave that seems to be bound
+                to his emotions, exposing neglected facts about
+                his ominous past. In a journey to find and accept himself, he needs to go through the darkness of his
+                mind until finally reaching the “light”.
+                The character will enter a room and, after a quick analysis of its contents, he will be able to think of
+                a viable route to get through it. He'll jump
+                between platforms, do multiple dashes, and manipulate the room contents by changing its predominant
+                color. Once the room is completed, the cycle will
+                repeat until the current area is finished, therefore proceeding to the next one, where new kinds of
+                interactables and platforms will be presented,
+                resulting in a major ambiance change.
+            </p>
+        </div>
+
+        <div class="box-right">
+            <figure>
+                {% load static %}
+                <img class="portfolio-image" src="{% static 'website/images/abd_1.jpg'%}" width="560" alt="Anything but Dark welcome screen">
+                <figcaption>
+                    Anything but Dark welcome screen
+                </figcaption>
+            </figure>
+        </div>
+
+        <div class="box-left">
+            <h1>
+                {% load static %}
+                Bruhh! - 3D third-person ragdoll physics brawler<br><img src="{% static 'website/images/stupid.ico'%}" alt="Bruhh icon">
+            </h1>
+            <p>
+                Once an archangel was bored, so he decided to gather the greatest warriors of all time and made them
+                fight to the death. When other angels heard of the
+                newest gambling game in heaven their reaction was unanimous: “Bruhh!”.The player chooses a homie to play
+                with and is placed in an arena with one or more
+                players/bots. Using surrounding objects as weapons, they will battle each other to achieve the game
+                mode’s objective. Each homie has a light and heavy
+                attack, defend, parry, grab, throw, jump, and roll actions. Getting hit increases the ragdoll factor
+                until it can't move therefore being considered
+                defeated or losing one life stock.
+            </p>
+        </div>
+
+        <div class="box-right">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/52oGYm7x7tM"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+
+        <div class="box-left">
+            <h1>
+                {% load static %}
+                Anastasis - 3D first-person suspense/walking simulator<br><img src="{% static 'website/images/dead-tree.ico'%}" alt="Arvore morta">
+            </h1>
+            <p>
+                After escaping from limbo with Amy, Eve is at the relics cemetery, where she will start searching for
+                the items which value is equal to a soul and body.
+                Only after she delivers it making an equivalent trade, The Wishing Tree shall resurrect her. Throughout
+                the game, the player will need to interact with
+                objects to solve puzzles, follow leads, and proceed with the narrative.
+            </p>
+        </div>
+
+        <div class="box-right">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/syXve3DaTq4"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+
+        <div class="box-left">
+            <h1>
+                {% load static %}
+                Bloodthirst - 2D arcade fighting game<br><img src="{% static 'website/images/gladiator.ico'%}" alt="Gladiador">
+            </h1>
+            <p>
+                After being sentenced to die in the arena for participating in a riot against his master. This roman
+                slave decided that if he is going down, he might
+                as well put up a fight. In Bloodthirst the player will use three different attacks, a defense, and a
+                roll to try and kill as many gladiators as possible
+                before perishing.
+            </p>
+        </div>
+
+        <div class="box-right">
+            <figure>
+                {% load static %}
+                <img class="portfolio-image" src="{% static 'website/images/bloodthirst_3.jpg'%}" width="560"
+                     alt="Bloodthirst gameplay screen shot">
+                <figcaption>
+                    Bloodthirst gameplay screen shot
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+{% endblock main %}

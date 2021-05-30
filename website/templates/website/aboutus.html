@@ -1,0 +1,98 @@
+{% extends 'website/base.html' %}
+
+{% block main %}
+    <section class="grid">
+        <div class="box-center">
+            {% load static %}
+            <img src="{% static 'website/images/wordcloud.png' %}" width="100%" alt="Wordcloud">
+        </div>
+        <div class="box-center">
+            {% load static %}
+            <img src="{% static 'website/images/Layout.png' %}" width="100%" alt="Website Layout">
+        </div>
+        <div class="box-center">
+            <table class="tabela">
+                <caption><u>Tabela de inventário</u></caption>
+                <tr>
+                    <th>Inventário</th>
+                    <th>Quantidade</th>
+                </tr>
+                <tr>
+                    <td>Páginas</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Imagens</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>Links externos</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Vídeos</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Animações</td>
+                    <td>2</td>
+                </tr>
+            </table>
+        </div>
+        <div class="box-center">
+            <table class="tabela">
+                <caption><u>Técnicas usadas</u></caption>
+                <tr>
+                    <th>Características</th>
+                    <th>Elementos/técnicas</th>
+                    <th>Exemplos</th>
+                </tr>
+                <tr>
+                    <td>Layouts</td>
+                    <td>Usou-se o CSS grid e CSS flexbox para construção de layouts</td>
+                    <td>Todas as páginas.</td>
+                </tr>
+                <tr>
+                    <td>Responsividade</td>
+                    <td>Foram usadas media queries que adaptam o layout para telemovel e PC consoante o tamanho da
+                        janela do browser.
+                    </td>
+                    <td>Todas as páginas.</td>
+                </tr>
+                <tr>
+                    <td>Seletores</td>
+                    <td>Foram usados: classes, id, elementos, :hover, :nth-child(n), elemento.classe, *, classe
+                        elemento
+                    </td>
+                    <td>.tabela td, .tabela th</td>
+                </tr>
+                <tr>
+                    <td>Etiquetas</td>
+                    <td>HTML main, nav, header, footer, head, body</td>
+                    <td>Mesma nav em todas as páginas</td>
+                </tr>
+                <tr>
+                    <td>Animações</td>
+                    <td>Foram feitas animações com keyframes, manipulando o tamanho e cor</td>
+                    <td>Os hyperlinks da nav e na página Home</td>
+                </tr>
+            </table>
+        </div>
+        <div class="box-center">
+            {% load static %}
+            <iframe width="560" height="315" src="{% static 'website/images/websiteVideo.mp4' %}" title="Vídeo de apresentação"
+                    frameborder="0"></iframe>
+        </div>
+
+        <div class="box-center">
+            {% load static %}
+            <img src="{% static 'website/images/contactPage.png' %}" class="overlay-image4 portfolio-image">
+            {% load static %}
+            <img src="{% static 'website/images/homePage.png' %}" class="overlay-image1 portfolio-image">
+            {% load static %}
+            <img src="{% static 'website/images/servicesPage.png' %}" class="overlay-image2 portfolio-image">
+            {% load static %}
+            <img src="{% static 'website/images/portfolioPage.png' %}" class="overlay-image3 portfolio-image">
+        </div>
+    </section>
+{% endblock main %}

@@ -1,0 +1,47 @@
+{% extends 'website/base.html' %}
+
+{% block main %}
+    <div class="formContainer">
+        <section class="grid">
+            <div class="box-left catch-phrase">
+                <h1>
+                    Got A Project Or A Partnership In Mind? Get In Touch!
+                </h1>
+            </div>
+
+            <div class="box-right">
+                <form action=”mailto:guisat158@gmail.com”
+                      method=”POST”
+                      enctype=”multipart/form-data”
+                      name=”EmailForm”>
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="Your email..">
+
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="portugal">Portugal</option>
+                        <option value="usa">USA</option>
+                        <option value="spain">Spain</option>
+                        <option value="france">France</option>
+                        <option value="germany">Germany</option>
+                        <option value="japan">Japan</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.."
+                              style="height:200px"></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </section>
+    </div>
+{% endblock main %}

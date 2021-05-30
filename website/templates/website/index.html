@@ -1,0 +1,18 @@
+{% extends 'website/base.html' %}
+
+{% block main %}
+    <section id="homeGrid">
+        <div class="box">
+            <a href="{% url 'website:portfolio' %}" class="homeLink">PORTFOLIO</a>
+        </div>
+        <div class="box">
+            <a href="{% url 'website:services' %}" class ="homeLink">SERVICES</a>
+        </div>
+        <div class="box">
+            <a href="{% url 'website:aboutus' %}" class="homeLink">ABOUT</a>
+        </div>
+        <div class="box">
+            <a href="{% url 'website:contact' %}" class="homeLink">CONTACT</a>
+        </div>
+    </section>
+{% endblock main %}
