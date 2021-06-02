@@ -1,32 +1,17 @@
 {% extends 'website/base.html' %}
 
+{% block header %}
+    <h1>Contact List</h1>
+{% endblock header %}
+
 {% block main %}
-    <form method=”POST” action="">
-        {% csrf_token %}
+    <div class="mainContact">
+        {% for contact in contacts %}
+            <p>{{ contact.first_name }} <a href="{% url 'website:editcontact' contact.id %}" class="btn btn-info">Edit</a>
+            </p>
 
-        {{ form }}
+        {% endfor %}
 
-        <input type="submit" value="Send"/>
-    </form>
-    <!--
-    <div class="formContainer">
-        <section class="grid">
-            <div class="box-left catch-phrase">
-                <h1>
-                    Got A Project Or A Partnership In Mind? Get In Touch!
-                </h1>
-            </div>
-
-            <div class="box-right">
-                <form method=”POST” action="">
-                    {% csrf_token %}
-
-                    {{ form }}
-
-                    <input type="submit" value="Send"/>
-                </form>
-            </div>
-        </section>
+        <a href="{% url 'website:addcontact' %}" class="btn btn-success">+ New Contact</a>
     </div>
-    -->
 {% endblock main %}

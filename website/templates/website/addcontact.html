@@ -1,0 +1,17 @@
+{% extends 'website/base.html' %}
+
+{% block header %}
+    <h1>Add contact</h1>
+{% endblock header %}
+
+{% block main %}
+    <div class="mainContact">
+        <form action="">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <input type="submit" value="Send" formmethod="post"/>
+        </form>
+    </div>
+{% endblock main %}

@@ -40,7 +40,13 @@
         </ul>
     </div>
 </nav>
-<main>
+
+<header class="text-center">
+    {% block header %}
+    {% endblock header %}
+</header>
+
+<main class="text-center">
     {% block main %}
     {% endblock main %}
 </main>

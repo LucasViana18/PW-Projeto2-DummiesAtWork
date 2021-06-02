@@ -1,0 +1,17 @@
+{% extends 'website/base.html' %}
+{% block header %}
+    <h1>Edit contact</h1>
+{% endblock header %}
+
+{% block main %}
+    <div class="mainContact">
+        <form action="{% url 'website:editcontact' contact_id %}">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+            <a href="{% url 'website:contact' %}" class="btn btn-danger">Cancel</a>
+            <input type="submit" value="Send" formmethod="post"/>
+            <a href="{% url 'website:deletecontact' contact_id %}" class="btn btn-warning">Delete Contact</a>
+        </form>
+    </div>
+{% endblock main %}
