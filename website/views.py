@@ -1,7 +1,8 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from .forms import ContactForm
+from .forms import ContactForm, QuizzForm
+
 
 # Create your views here.
 def home_page_view(request):
@@ -25,3 +26,9 @@ def contact_page_view(request):
 
     context = {'form': form}
     return render(request, 'website/contact.html', context)
+
+def quizz_page_view(request):
+    form = QuizzForm(request.POST or None)
+
+    context = {'quizz_form': form}
+    return render(request, 'website/quizz.html', context)
