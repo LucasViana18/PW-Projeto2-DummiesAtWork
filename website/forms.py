@@ -1,13 +1,13 @@
 from django.forms import ModelForm
 from .models import Contact
-from .models import Quizz
+from .models import Question
 
 class ContactForm(ModelForm):
     class Meta:
         model = Contact
         fields = '__all__'
 
-class QuizzForm(ModelForm):
+class QuestionForm(ModelForm):
     class Meta:
-        model = Quizz
+        model = Question
         fields = '__all__'

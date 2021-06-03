@@ -13,5 +13,6 @@ urlpatterns = [
     path('addcontact', views.new_contact_page_view, name='addcontact'),
     path('editcontact/<int:contact_id>', views.edit_contact_page_view, name='editcontact'),
     path('deletecontact/<int:contact_id>', views.delete_contact_page_view, name='deletecontact'),
-    path('quizz', views.quizz_page_view, name='quizz'),
+    path('question', views.question_page_view, name='question'),
+    path('doquestion', views.do_question_page_view, name='doquestion'),
 ]

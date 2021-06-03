@@ -1,6 +1,4 @@
 from django.db import models
-from django import forms
-import datetime
 
 
 # Create your models here.
@@ -15,30 +13,60 @@ class Contact(models.Model):
         return self.first_name + " " + self.last_name
 
 
-class Quizz(models.Model):
-    YES_OR_NO_CHOICE = (
-        ('yes', 'YES'),
-        ('no', 'NO'),
+class Question(models.Model):
+    TYPE_MOVEMENT = (
+        ("TELEPORT", "Teleport"),
+        ("SMOOTH LOCOMOTION", "Smooth locomotion"),
+        ("ARM SWING", "Arm Swing"),
     )
 
-    GENRE_OPTIONS = (
-        ("ACTION", "Action"),
-        ("SHOOTER", "Shooter"),
-        ("ROLE-PLAY", "Role-play"),
-        ("SPORT", "Sport"),
+    VR_GAMES = (
+        ("BEAT SABER", "Beat Saber"),
+        ("SUPERHOT", "Superhot"),
+        ("TROVER SAVES THE UNIVERSE", "Trover Saves The Universe"),
+        ("HALF LIFE: ALYX", "Half Life: Alyx"),
+        ("STAR TREK", "Star Trek: Bridge Crew"),
+        ("BONEWORKS", "Boneworks"),
+        ("JOB SIMULATOR", "Job Simulator"),
+    )
+
+    GAME_PERSPECTIVE = (
+        ("GOD VIEW", "God View"),
+        ("2D SIDEVIEW", "2D Sideview"),
+        ("2.5D", "2.5D"),
+        ("ISOMETRIC", "Isometric"),
+        ("THIRD PERSON", "Third Person"),
+        ("FIRST PERSON", "First Person"),
+    )
+
+    SERVICES = (
+        ("FULL CYCLE PRODUCTION", "Full Cycle Production"),
+        ("AR PRODUCTION", "AR Production"),
+        ("PROTOTYPING", "Prototyping"),
+        ("GAME PORTING", "Game Porting"),
+    )
+
+    GENRES = (
         ("ADVENTURE", "Adventure"),
-        ("FIGHTING", "Fighting"),
-        ("RACING", "Racing"),
-        ("STRATEGY", "Strategy"),
-        ("OTHERS", "Others"),
+        ("ACTION", "Action"),
+        ("FPS", "FPS"),
+        ("RPG", "RPG"),
+        ("LIGHT NOVEL", "Light Novel"),
+        ("RHYTHM", "Rhythm"),
     )
 
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    date_of_birth = models.DateField(default=datetime.date.today)
-    have_you_played_VR_before = models.CharField(max_length=6, choices=YES_OR_NO_CHOICE, default='yes')
-    select_your_favorite_game_genres = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple,
-                                                                 choices=GENRE_OPTIONS)
+    best_selling_VR_game = models.TextField(choices=VR_GAMES)
+    most_popular_type_of_movement_in_VR = models.TextField(choices=TYPE_MOVEMENT)
+    can_VR_cause_motion_sickness = models.BooleanField()
+    bruhh_is_a_3D_ragdoll_physics_game = models.BooleanField()
+    what_is_bloodthirst_game_perspective = models.TextField(choices=GAME_PERSPECTIVE)
+    which_services_we_do_not_offer = models.TextField(choices=SERVICES)
+    how_many_links_there_are_in_the_home_page = models.IntegerField()
+    what_is_anything_but_dark_genre = models.TextField(choices=GENRES)
+    what_was_the_icon_used_in_anastasis = models.CharField(max_length=10)
+    is_there_a_demonstration_video_on_this_website = models.BooleanField()
 
     def __str__(self):
         return self.first_name + " " + self.last_name

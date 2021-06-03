@@ -1,20 +1,23 @@
 {% extends 'website/base.html' %}
 
-{% block main %}
-    <div class="formContainer">
-        <section class="grid">
-            <div class="box-left catch-phrase">
-                <h1>
-                    Fill our survey so we can know just how you like your VR games!
-                </h1>
-            </div>
+{% block header %}
+    <h1>Quizz</h1>
+{% endblock header %}
 
-            <div class="box-right">
-                <form method=”POST” action="">{% csrf_token %}
-                    {{ quizz_form }}
-                    <input type="submit" value="Send"/>
-                </form>
-            </div>
-        </section>
+
+{% block main %}
+    <h3>
+        To play the quizz, click the button below
+    </h3>
+
+    <a href="{% url 'website:doquestion' %}" class="btn btn-success">Do the Quizz!!</a>
+    <p></p>
+    <h3>List of quizz</h3>
+
+    <div class="mainContact">
+        {% for question in questions %}
+            <p>{{ question.first_name }} {{ question.last_name }}</p>
+
+        {% endfor %}
     </div>
 {% endblock main %}

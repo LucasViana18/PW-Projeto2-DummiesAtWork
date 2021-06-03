@@ -1,8 +1,9 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from .forms import ContactForm, QuizzForm
-from .models import Contact
+from .forms import ContactForm, QuestionForm
+from .models import Contact, Question
+
 
 # Create your views here.
 
@@ -18,6 +19,7 @@ def services_page_view(request):
 def aboutus_page_view(request):
     return render(request, 'website/aboutus.html')
 
+#Contact
 def contact_page_view(request):
     context = {'contacts': Contact.objects.all()}
 
@@ -48,8 +50,20 @@ def delete_contact_page_view(request, contact_id):
     Contact.objects.get(pk=contact_id).delete()
     return HttpResponseRedirect(reverse('website:contact'))
 
-def quizz_page_view(request):
-    form = QuizzForm(request.POST or None)
 
-    context = {'quizz_form': form}
+# Quizz
+def question_page_view(request):
+    context = {'questions': Question.objects.all()}
+
     return render(request, 'website/quizz.html', context)
+
+def do_question_page_view(request):
+    form = QuestionForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse('website:question'))
+
+    context = {'question_form': form}
+
+    return render(request, 'website/doquizz.html', context)
