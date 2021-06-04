@@ -1,0 +1,16 @@
+{% extends 'website/base.html' %}
+
+{% block header %}
+    <h1>Comments</h1>
+{% endblock header %}
+
+{% block main %}
+    <div class="mainContact">
+        {% for comment in comments %}
+            <p>{{ comment.name }}:<br>
+            {{ comment.subject }}</p>
+        {% endfor %}
+        <h3>To add a comment, click the lonk below.</h3>
+        <a href="{% url 'website:addcomment' %}" class="btn btn-success">+ New Comment</a>
+    </div>
+{% endblock main %}

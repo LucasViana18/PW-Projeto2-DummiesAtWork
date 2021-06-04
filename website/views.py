@@ -1,8 +1,8 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from .forms import ContactForm, QuestionForm
-from .models import Contact, Question
+from .forms import ContactForm, QuestionForm, CommentForm
+from .models import Contact, Question, Comment
 
 
 # Create your views here.
@@ -98,3 +98,18 @@ def do_question_page_view(request):
     context = {'question_form': form}
 
     return render(request, 'website/doquizz.html', context)
+
+def comment_page_view(request):
+    context = {'comments': Comment.objects.all()}
+
+    return render(request, 'website/comment.html', context)
+
+def add_comment_page_view(request):
+    form = CommentForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse('website:comment'))
+
+    context = {'comment_form': form}
+    return render(request, 'website/addcomment.html', context)

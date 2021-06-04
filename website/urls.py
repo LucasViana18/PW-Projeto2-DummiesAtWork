@@ -15,4 +15,6 @@ urlpatterns = [
     path('deletecontact/<int:contact_id>', views.delete_contact_page_view, name='deletecontact'),
     path('question', views.question_page_view, name='question'),
     path('doquestion', views.do_question_page_view, name='doquestion'),
+    path('comment', views.comment_page_view, name='comment'),
+    path('addcomment', views.add_comment_page_view, name='addcomment'),
 ]

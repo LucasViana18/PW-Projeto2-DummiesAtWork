@@ -1,6 +1,5 @@
 from django.forms import ModelForm
-from .models import Contact
-from .models import Question
+from .models import Contact, Comment, Question
 
 class ContactForm(ModelForm):
     class Meta:
@@ -12,3 +11,8 @@ class QuestionForm(ModelForm):
         model = Question
         fields = '__all__'
         exclude = ['points']
+
+class CommentForm(ModelForm):
+    class Meta:
+        model = Comment
+        fields = '__all__'

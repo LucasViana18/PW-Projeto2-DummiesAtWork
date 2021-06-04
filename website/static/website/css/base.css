@@ -138,7 +138,7 @@ section {
 #homeGrid {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
 }
 
 .box {
@@ -167,6 +167,10 @@ section {
 
 #homeGrid .box:nth-child(5) {
     background: #2137ff;
+}
+
+#homeGrid .box:nth-child(6) {
+    background: #bc00d9;
 }
 
 /* BODY */
