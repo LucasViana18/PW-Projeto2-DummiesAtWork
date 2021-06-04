@@ -61,6 +61,37 @@ def do_question_page_view(request):
     form = QuestionForm(request.POST or None)
 
     if form.is_valid():
+
+        #if Question.objects.get().best_selling_VR_game == "Beat Saber":
+        #    Question.objects.get().points += 1
+
+        #if Question.objects.get().most_popular_type_of_movement_in_VR == "Teleport":
+        #    Question.objects.get().points += 1
+
+        #if Question.objects.get().can_VR_cause_motion_sickness == True:
+        #    Question.objects.get().points += 1
+
+        #if Question.objects.get().bruhh_is_a_3D_ragdoll_physics_game == True:
+        #    Question.objects.get().points += 1
+
+        #if Question.objects.get().what_is_bloodthirst_game_perspective == "2D Sideview":
+        #    Question.objects.get().points += 1
+
+        #if Question.objects.get().which_services_we_do_not_offer == "AR Production":
+        #    Question.objects.get().points += 1
+
+        #if Question.objects.get().how_many_links_there_are_in_the_home_page == 6:
+        #    Question.objects.get().points += 1
+
+        #if Question.objects.get().what_is_anything_but_dark_genre == "Adventure":
+        #    Question.objects.get().points += 1
+
+        #if Question.objects.get().what_was_the_icon_used_in_anastasis == "Tree":
+        #    Question.objects.get().points += 1
+
+        #if Question.objects.get().is_there_a_demonstration_video_on_this_website == True:
+        #    Question.objects.get().points += 1
+
         form.save()
         return HttpResponseRedirect(reverse('website:question'))
 

@@ -16,7 +16,7 @@
 
     <div class="mainContact">
         {% for question in questions %}
-            <p>{{ question.first_name }} {{ question.last_name }}</p>
+            <p>{{ question.first_name }} {{ question.last_name }} - Points: {{ question.points }}</p>
 
         {% endfor %}
     </div>

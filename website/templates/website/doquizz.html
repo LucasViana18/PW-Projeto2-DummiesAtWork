@@ -6,12 +6,12 @@
 
 {% block main %}
     <div class="mainContact">
-        <form action="">
+        <form action="{% url 'website:doquestion'%}">
             {% csrf_token %}
 
             {{ question_form }}
 
             <input type="submit" value="Done" formmethod="post"/>
         </form>
-    </div>>
+    </div>
 {% endblock main %}

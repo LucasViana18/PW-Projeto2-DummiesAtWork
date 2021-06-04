@@ -3,7 +3,9 @@
 {% block body %}
     <form action={% url 'login' %} method=""_POST>
         {% csrf_token %}
-        <input type="text" name="username" placeholder="username">
-        <input type="text" name="password" placeholder="password">
+        <label>
+            <input type="text" name="username" placeholder="username"/>
+            <input type="text" name="password" placeholder="password"/>
+        </label>
     </form>
 {% endblock %}

@@ -67,6 +67,7 @@ class Question(models.Model):
     what_is_anything_but_dark_genre = models.TextField(choices=GENRES)
     what_was_the_icon_used_in_anastasis = models.CharField(max_length=10)
     is_there_a_demonstration_video_on_this_website = models.BooleanField()
+    points = models.IntegerField(default=0)
 
     def __str__(self):
         return self.first_name + " " + self.last_name
