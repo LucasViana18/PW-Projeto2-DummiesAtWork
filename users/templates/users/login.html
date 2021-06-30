@@ -1,11 +1,17 @@
-{% extends 'users/base.html' %}
+{%  extends 'users/base.html' %}
+
 
 {% block body %}
-    <form action={% url 'login' %} method=""_POST>
+    <h1>Login</h1>
+    {% if message %}
+        <div> {{ message }} </div>
+    {% endif %}
+    <form action="{% url 'users:login' %}" method="POST">
         {% csrf_token %}
-        <label>
-            <input type="text" name="username" placeholder="username"/>
-            <input type="text" name="password" placeholder="password"/>
-        </label>
+
+        <input type="text" name="username" placeholder="username"><br>
+        <input type="password" name="password" placeholder="password"><br>
+        <input type="submit" value="Login">
     </form>
+
 {% endblock %}
