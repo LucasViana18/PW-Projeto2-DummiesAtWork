@@ -4,7 +4,6 @@ from django.urls import reverse
 from .forms import ContactForm, QuestionForm, CommentForm
 from .models import Contact, Question, Comment
 
-
 # Create your views here.
 
 def home_page_view(request):
@@ -18,6 +17,7 @@ def services_page_view(request):
 
 def aboutus_page_view(request):
     return render(request, 'website/aboutus.html')
+
 
 #Contact
 def contact_page_view(request):
@@ -59,40 +59,32 @@ def question_page_view(request):
 
 def do_question_page_view(request):
     form = QuestionForm(request.POST or None)
-
     if form.is_valid():
 
-        #if Question.objects.get().best_selling_VR_game == "Beat Saber":
-        #    Question.objects.get().points += 1
+        current_form = form.save(commit=False)
 
-        #if Question.objects.get().most_popular_type_of_movement_in_VR == "Teleport":
-        #    Question.objects.get().points += 1
+        if current_form.best_selling_VR_game == "BEAT SABER":
+            current_form.points += 1
+        if current_form.most_popular_type_of_movement_in_VR == "TELEPORT":
+            current_form.points += 1
+        if current_form.can_VR_cause_motion_sickness == True:
+            current_form.points += 1
+        if current_form.bruhh_is_a_3D_ragdoll_physics_game == True:
+            current_form.points += 1
+        if current_form.what_is_bloodthirst_game_perspective == "2D SIDEVIEW":
+            current_form.points += 1
+        if current_form.which_services_we_do_not_offer == "AR PRODUCTION":
+            current_form.points += 1
+        if current_form.how_many_links_there_are_in_the_home_page == 6:
+            current_form.points += 1
+        if current_form.what_is_anything_but_dark_genre == "ADVENTURE":
+            current_form.points += 1
+        if current_form.what_was_the_icon_used_in_anastasis == "Tree":
+            current_form.points += 1
+        if current_form.is_there_a_demonstration_video_on_this_website == True:
+            current_form.points += 1
 
-        #if Question.objects.get().can_VR_cause_motion_sickness == True:
-        #    Question.objects.get().points += 1
-
-        #if Question.objects.get().bruhh_is_a_3D_ragdoll_physics_game == True:
-        #    Question.objects.get().points += 1
-
-        #if Question.objects.get().what_is_bloodthirst_game_perspective == "2D Sideview":
-        #    Question.objects.get().points += 1
-
-        #if Question.objects.get().which_services_we_do_not_offer == "AR Production":
-        #    Question.objects.get().points += 1
-
-        #if Question.objects.get().how_many_links_there_are_in_the_home_page == 6:
-        #    Question.objects.get().points += 1
-
-        #if Question.objects.get().what_is_anything_but_dark_genre == "Adventure":
-        #    Question.objects.get().points += 1
-
-        #if Question.objects.get().what_was_the_icon_used_in_anastasis == "Tree":
-        #    Question.objects.get().points += 1
-
-        #if Question.objects.get().is_there_a_demonstration_video_on_this_website == True:
-        #    Question.objects.get().points += 1
-
-        form.save()
+        current_form.save()
         return HttpResponseRedirect(reverse('website:question'))
 
     context = {'question_form': form}
