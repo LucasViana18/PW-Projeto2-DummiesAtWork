@@ -38,3 +38,20 @@ function theme(){
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector("#colorTheme").onclick = theme;
 })
+
+function showPage(page) {
+    document.querySelectorAll('div[class*="singlePageContent"]').forEach(div => {
+        div.style.display = 'none';
+    });
+    document.querySelectorAll(`div[class*="${page}"]`).forEach(div => {
+        div.style.display = 'block';
+    });
+};
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('button[class*="pageSelector"]').forEach(button => {
+        button.onclick = function() {
+            showPage(this.dataset.page);
+        }
+    });
+});

@@ -3,7 +3,15 @@
 {% block main %}
     <section class="grid">
         <div class="box-left">
+            <button data-page="anything-but-dark" class="btn btn-dark pageSelector">Anything but Dark</button>
+            <button data-page="bruhh" class="btn btn-dark pageSelector">Bruhh!</button>
+            <button data-page="anastasis" class="btn btn-dark pageSelector">Anastasis</button>
+            <button data-page="bloodthirst" class="btn btn-dark pageSelector">Bloodthirst</button>
+        </div>
+        <div class="box-right">
             <button id="colorTheme" class="btn btn-light">Light Theme</button>
+        </div>
+        <div class="box-left anything-but-dark singlePageContent">
             <h1>
                 {% load static %}
                 Anything but Dark - 2D adventure platformer<br><img src="{% static 'website/images/cave.ico'%}" alt="Caverna">
@@ -23,7 +31,7 @@
             </p>
         </div>
 
-        <div class="box-right">
+        <div class="box-right anything-but-dark singlePageContent">
             <figure>
                 {% load static %}
                 <img class="portfolio-image" src="{% static 'website/images/abd_1.jpg'%}" width="560" alt="Anything but Dark welcome screen">
@@ -33,7 +41,7 @@
             </figure>
         </div>
 
-        <div class="box-left">
+        <div class="box-left bruhh singlePageContent">
             <h1>
                 {% load static %}
                 Bruhh! - 3D third-person ragdoll physics brawler<br><img src="{% static 'website/images/stupid.ico'%}" alt="Bruhh icon">
@@ -51,14 +59,14 @@
             </p>
         </div>
 
-        <div class="box-right">
+        <div class="box-right bruhh singlePageContent">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/52oGYm7x7tM"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
         </div>
 
-        <div class="box-left">
+        <div class="box-left anastasis singlePageContent">
             <h1>
                 {% load static %}
                 Anastasis - 3D first-person suspense/walking simulator<br><img src="{% static 'website/images/dead-tree.ico'%}" alt="Arvore morta">
@@ -72,14 +80,14 @@
             </p>
         </div>
 
-        <div class="box-right">
+        <div class="box-right anastasis singlePageContent">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/syXve3DaTq4"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
         </div>
 
-        <div class="box-left">
+        <div class="box-left bloodthirst singlePageContent">
             <h1>
                 {% load static %}
                 Bloodthirst - 2D arcade fighting game<br><img src="{% static 'website/images/gladiator.ico'%}" alt="Gladiador">
@@ -93,7 +101,7 @@
             </p>
         </div>
 
-        <div class="box-right">
+        <div class="box-right bloodthirst singlePageContent">
             <figure>
                 {% load static %}
                 <img class="portfolio-image" src="{% static 'website/images/bloodthirst_3.jpg'%}" width="560"
