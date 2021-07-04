@@ -21,11 +21,11 @@ def aboutus_page_view(request):
 
 #Contact
 def contact_page_view(request):
+    context = {'contacts': Contact.objects.all()}
     if request.user.is_authenticated:
-        context = {'contacts': Contact.objects.all()}
         return render(request, 'website/contact.html', context)
     else:
-        return HttpResponseRedirect(reverse('users:login'))
+        return HttpResponseRedirect(reverse('website:addcontact'))
 
 def new_contact_page_view(request):
     form = ContactForm(request.POST or None)

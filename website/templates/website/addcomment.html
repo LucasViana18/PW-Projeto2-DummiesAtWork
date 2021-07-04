@@ -1,12 +1,11 @@
 {% extends 'website/base.html' %}
 
 {% block header %}
-    <h1>Comments</h1>
+    <h1>Write your comment!</h1>
 {% endblock header %}
 
 {% block main %}
-    <div class="mainContact">
-        <h3>Write your comment!</h3>
+    <div class="mainContact box-center">
         <form action="">
             {% csrf_token %}
 

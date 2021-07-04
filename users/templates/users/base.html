@@ -2,11 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Users</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="author" content="Dummies at Work">
+    <meta name="keywords" content="indie, developer, games, web, Unity">
+    <meta name="description" content="Game Developing Company">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+    {% load static %}
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'website/images/dummy.ico' %}"/>
+    {% load static %}
+    <script src="{% static 'website/js/website.js' %}" type="text/javascript"></script>
+    <title>
+        Dummies At Work
+    </title>
 </head>
 <body>
-{% block body %}
+<nav>
+    <div class="navPC">
+        <a href="{% url 'website:home' %}" class="navLink">Home</a>
+        <a href="{% url 'website:portfolio' %}" class="navLink">Portfolio</a>
+        <a href="{% url 'website:services' %}" class="navLink">Services</a>
+        <a href="{% url 'website:aboutus' %}" class="navLink">About</a>
+        <a href="{% url 'website:contact' %}" class="navLink">Contact</a>
+        <a href="{% url 'website:question' %}" class="navLink">Quizz</a>
+        <a href="{% url 'website:comment' %}" class="navLink">Comments</a>
+        <a href="{% url 'users:verify_user_authentication' %}" class="navLink">Login/Logout</a>
+    </div>
+    <div class="navPhone">
+        <input type="checkbox" id="navCheckbox" class="navCheckbox">
+        <label for="navCheckbox" class="navToggle">
+            <div class="navBar"></div>
+            <div class="navBar"></div>
+            <div class="navBar"></div>
+        </label>
+        <ul class="navMenuPhone">
+            <li><a href="{% url 'website:home' %}" class="navLink">Home</a></li>
+            <li><a href="{% url 'website:portfolio' %}" class="navLink">Portfolio</a></li>
+            <li><a href="{% url 'website:services' %}" class="navLink">Services</a></li>
+            <li><a href="{% url 'website:aboutus' %}" class="navLink">About</a></li>
+            <li><a href="{% url 'website:contact' %}" class="navLink">Contact</a></li>
+            <li><a href="{% url 'website:question' %}" class="navLink">Quizz</a></li>
+            <li><a href="{% url 'website:comment' %}" class="navLink">Comments</a></li>
+            <li><a href="{% url 'users:verify_user_authentication' %}" class="navLink">Login/Logout</a></li>
+        </ul>
+    </div>
+</nav>
 
-{% endblock %}
+<header class="text-center">
+    {% block header %}
+    {% endblock header %}
+</header>
+
+<main class="text-center">
+    {% block main %}
+    {% endblock main %}
+</main>
 </body>
 </html>

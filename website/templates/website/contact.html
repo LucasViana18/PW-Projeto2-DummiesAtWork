@@ -5,13 +5,14 @@
 {% endblock header %}
 
 {% block main %}
-    <div class="mainContact">
+    <div class="mainContact box-center">
         {% for contact in contacts %}
             <p>{{ contact.first_name }} <a href="{% url 'website:editcontact' contact.id %}" class="btn btn-info">Edit</a>
             </p>
 
         {% endfor %}
-
+    </div>
+    <div>
         <a href="{% url 'website:addcontact' %}" class="btn btn-success">+ New Contact</a>
     </div>
 {% endblock main %}

@@ -5,12 +5,10 @@
 {% endblock header %}
 
 {% block main %}
-    <div class="mainContact">
+    <div class="mainContact box-center">
         <form action="">
             {% csrf_token %}
-
             {{ form.as_p }}
-
             <input type="submit" value="Send" formmethod="post"/>
         </form>
     </div>

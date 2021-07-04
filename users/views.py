@@ -36,5 +36,10 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return render(request, 'users/login.html', {
-        'message': 'Logged out'})
+    return render(request, 'users/login.html')
+
+def verify_user_authentication(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('users:logout'))
+    else:
+        return HttpResponseRedirect(reverse('users:login'))

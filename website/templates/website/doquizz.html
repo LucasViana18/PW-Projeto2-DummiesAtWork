@@ -5,11 +5,11 @@
 {% endblock header %}
 
 {% block main %}
-    <div class="mainContact">
+    <div class="mainContact box-center">
         <form action="{% url 'website:doquestion'%}">
             {% csrf_token %}
 
-            {{ question_form }}
+            {{ question_form.as_p }}
 
             <input type="submit" value="Done" formmethod="post"/>
         </form>

@@ -4,7 +4,7 @@
 {% endblock header %}
 
 {% block main %}
-    <div class="mainContact">
+    <div class="mainContact box-center">
         <form action="{% url 'website:editcontact' contact_id %}">
             {% csrf_token %}
 

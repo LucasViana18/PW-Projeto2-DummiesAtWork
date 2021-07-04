@@ -25,6 +25,9 @@
         <a href="{% url 'website:services' %}" class="navLink">Services</a>
         <a href="{% url 'website:aboutus' %}" class="navLink">About</a>
         <a href="{% url 'website:contact' %}" class="navLink">Contact</a>
+        <a href="{% url 'website:question' %}" class="navLink">Quizz</a>
+        <a href="{% url 'website:comment' %}" class="navLink">Comments</a>
+        <a href="{% url 'users:verify_user_authentication' %}" class="navLink">Login/Logout</a>
     </div>
     <div class="navPhone">
         <input type="checkbox" id="navCheckbox" class="navCheckbox">
@@ -39,6 +42,9 @@
             <li><a href="{% url 'website:services' %}" class="navLink">Services</a></li>
             <li><a href="{% url 'website:aboutus' %}" class="navLink">About</a></li>
             <li><a href="{% url 'website:contact' %}" class="navLink">Contact</a></li>
+            <li><a href="{% url 'website:question' %}" class="navLink">Quizz</a></li>
+            <li><a href="{% url 'website:comment' %}" class="navLink">Comments</a></li>
+            <li><a href="{% url 'users:verify_user_authentication' %}" class="navLink">Login/Logout</a></li>
         </ul>
     </div>
 </nav>
